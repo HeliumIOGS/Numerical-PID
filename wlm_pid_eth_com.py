@@ -7,6 +7,14 @@ Created on Tue Jun 11 14:55:20 2019
 A PID-loop for the 679 nm laser using the High Finesse WS/7 wavemeter.
 """
 
+"""
+Revised on Thu Jun 13 17:10:20 2024
+
+@author: G Dupuy
+
+A PID-loop for the Raman 1083 nm laser using the High Finesse WS/6 wavemeter.
+"""
+
 from pylablib.aux_libs.devices.HighFinesse import WS
 from datetime import datetime, timedelta
 from time import sleep
@@ -18,9 +26,6 @@ from matplotlib import pyplot as plt
 
 #%% INPUT
 
-# Path to .dll library of the WS/7:
-LIB_PATH = 'C:\\Users\\strontium\\.conda\\envs\\py3\\Lib\\site-packages\\'\
-            + 'pylablib\\aux_libs\\devices\\libs\\x64\\wlmData7.dll'
 # Measurement frequency of the WS/7:
 MEAS_FREQ = 500 # in Hz, effectively limited to ca. 100 Hz by loop execution
 # Desired PID-loop bandwidth:
@@ -29,7 +34,7 @@ PID_BW = 1 # in Hz
 FREQ_SCAN_START = 441.33238e12 # in Hz
 FREQ_SCAN_STOP = 441.33224e12 # in Hz
 # Conversion rate 1bit DAC -> df:
-DF = 533e3 # Hz / bit
+DF = 41.09e6 # Hz / bit
 
 #%% INITIALIZE FUNCTIONS
 

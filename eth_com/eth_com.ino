@@ -10,19 +10,19 @@ int msg[4];
 // network configuration.  gateway and subnet are optional.
 
  // the media access control (ethernet hardware) address for the shield:
-byte mac[] = { 0xA8, 0x61, 0x0A, 0xAE, 0x01, 0x88 };
+byte mac[] = { 0xA8, 0x61, 0x0A, 0xAE, 0xF6, 0xA5 };
 //the IP address for the shield:
-byte ip[] = { 10, 118, 16, 29 };
+byte ip[] = { 10, 117, 53, 46 };
 // the router's gateway address:
-byte gateway[] = { 192, 168, 0, 2};
+byte gateway[] = { 172, 20, 255, 253};
 // the subnet:
-byte subnet[] = { 255, 255, 255, 0 };
+byte subnet[] = { 255, 255, 0., 0 };
 
 // telnet defaults to port 23
 EthernetServer server = EthernetServer(7777);
 
 void setup()
-{
+{ SerialUSB.begin(9600);
   analogWrite(DAC0,2047);
   analogWrite(DAC1,2047);
   pinMode(relay_pin_dac0,OUTPUT);
@@ -54,6 +54,6 @@ void loop()
   dacc_set_channel_selection(DACC_INTERFACE, channel);
   dacc_write_conversion_data(DACC_INTERFACE, voltage);
   analogWrite(2+channel, output*255);
-    
+  SerialUSB.print(voltage);
   }
 }
