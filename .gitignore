@@ -1,0 +1,80 @@
+# Exclude data directory:
+data/
+
+# Exclude animations:
+*.gif
+
+# MacOS files:
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+tox.ini
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+
+# Type checker:
+.mypy_cache/
+.typings/
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Matlab files:
+*.asv
+
+# IPyNbCheckpoints:
+ipynb_checkpoints/
+tests/.ipynb_checkpoints/
+
+# Virtualenv:
+venv/
+py3*/
+
+##### Project specific #####
+
+# QMC simulations
+data/qmc
+
+# Test visualizations:
+src/becfluct/vis/test*.*
