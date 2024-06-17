@@ -2,10 +2,10 @@
 # @Author: tc/gd
 # @Date:   2024-05-31 11:01:16
 # @Last Modified by:   Your name
-# @Last Modified time: 2024-06-17 15:23:50
+# @Last Modified time: 2024-06-17 15:52:28
 
 import sys
-sys.path.append('py-ws7')
+# sys.path.append('py-ws7')
 from wlm import WavelengthMeter as WM
 from log_config import logging
 import threading, queue
