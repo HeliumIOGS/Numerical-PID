@@ -22,13 +22,15 @@ byte subnet[] = { 255, 255, 0., 0 };
 EthernetServer server = EthernetServer(7777);
 
 void setup()
-{ SerialUSB.begin(9600);
+{ 
+  // SerialUSB.begin(19200);
+  Serial.begin(9600);
   analogWrite(DAC0,2047);
   analogWrite(DAC1,2047);
   pinMode(relay_pin_dac0,OUTPUT);
   pinMode(relay_pin_dac1,OUTPUT);
   analogWrite(relay_pin_dac0, relay_open);
-  analogWrite(relay_pin_dac1, relay_open);
+  analogWrite(relay_pin_dac1, relay_open);s
   
   // initialize the ethernet device:
   Ethernet.begin(mac, ip, gateway, subnet);
@@ -54,6 +56,7 @@ void loop()
   dacc_set_channel_selection(DACC_INTERFACE, channel);
   dacc_write_conversion_data(DACC_INTERFACE, voltage);
   analogWrite(2+channel, output*255);
-  SerialUSB.print(voltage);
+  // SerialUSB.print(msg[1]);
+  Serial.println(voltage);
   }
 }
