@@ -30,7 +30,7 @@ void setup()
   pinMode(relay_pin_dac0,OUTPUT);
   pinMode(relay_pin_dac1,OUTPUT);
   analogWrite(relay_pin_dac0, relay_open);
-  analogWrite(relay_pin_dac1, relay_open);s
+  analogWrite(relay_pin_dac1, relay_open);
   
   // initialize the ethernet device:
   Ethernet.begin(mac, ip, gateway, subnet);
